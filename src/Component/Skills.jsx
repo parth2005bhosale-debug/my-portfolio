@@ -24,11 +24,17 @@ function Skills() {
       number: '05',
       name: 'UI/UX Design',
       description: 'Focusing on usability, clarity and visual balance.'
+    },
+    {
+      number: '06',
+      name: 'AI Tools & Prompting',
+      description: 'Using AI tools to improve development, problem-solving and workflow efficiency.'
     }
   ]
 
   return (
     <section className="skills" id="skills">
+
       <div className="section-heading">
         <p className="section-label">SKILLS</p>
 
@@ -54,6 +60,7 @@ function Skills() {
         ))}
 
       </div>
+
     </section>
   )
 }
