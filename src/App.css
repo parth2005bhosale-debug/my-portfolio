@@ -149,6 +149,44 @@ section {
 }
 
 
+/* HAMBURGER */
+
+.menu-btn {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: none;
+  background: #111827;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-btn span {
+  width: 17px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu-btn.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
 /* =========================
    HERO
 ========================= */
@@ -905,12 +943,54 @@ section {
     padding: 18px 5%;
   }
 
+  /* Desktop navigation hidden */
   .nav-links {
     display: none;
   }
 
+  /* Let's Talk stays visible */
   .nav-button {
+    display: block;
     padding: 9px 17px;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  /* Hamburger visible */
+  .menu-btn {
+    display: flex;
+  }
+
+  /* Mobile menu opens after clicking hamburger */
+  .nav-links.active {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px;
+    background: rgba(248, 247, 244, 0.98);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.12);
+  }
+
+  .nav-links.active a {
+    padding: 13px 15px;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+
+  .nav-links.active a:hover {
+    background: #e9eaec;
+  }
+
+  .nav-links.active a::after {
+    display: none;
   }
 
   .hero {
@@ -1039,6 +1119,12 @@ section {
 
   .nav-button {
     font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .menu-btn {
+    width: 40px;
+    height: 40px;
   }
 
   .hero h1 {
